@@ -20,6 +20,20 @@ export default {
       }
     },
     {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      validation: Rule => Rule.required().min(1),
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true
+          }
+        }
+      ]
+    },
+    {
       name: 'price',
       title: 'Price',
       type: 'number',
@@ -29,7 +43,6 @@ export default {
       title: 'Variants',
       name: 'variants',
       type: 'array',
-      validation: Rule => Rule.required().min(1),
       of: [
         {
           title: 'Variant',
